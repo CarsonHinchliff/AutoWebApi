@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoWebApiSample1.ControllerServices
 {
-    [Route("[controller]")]
+    //[Route("[controller]")]
     [RemoteService]
     public class StudentService: IRemoteService
     {
