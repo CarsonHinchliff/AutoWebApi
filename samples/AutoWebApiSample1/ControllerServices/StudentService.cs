@@ -1,8 +1,12 @@
 ﻿using AutoWebApi;
+using AutoWebApi.Conventions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace AutoWebApiSample1.ControllerServices
@@ -11,7 +15,9 @@ namespace AutoWebApiSample1.ControllerServices
     [RemoteService]
     public class StudentService: IRemoteService
     {
-        public StudentService() { }
+        public StudentService(IEnumerable<IAutoApiServiceConvention> autoApiServiceConventions = null)
+        {
+        }
 
         [HttpGet]
         public IEnumerable<Student> Get()

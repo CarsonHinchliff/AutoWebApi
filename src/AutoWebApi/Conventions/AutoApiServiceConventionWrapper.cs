@@ -12,12 +12,12 @@ namespace AutoWebApi.Conventions
 
         public AutoApiServiceConventionWrapper(IServiceCollection services)
         {
-            _convention = services.BuildServiceProvider().GetRequiredService<IAutoApiServiceConvention>();
+            _convention = services.BuildServiceProvider().GetService<IAutoApiServiceConvention>();
         }
 
         public void Apply(ApplicationModel application)
         {
-            _convention.Apply(application);
+            _convention?.Apply(application);
         }
     }
 }
